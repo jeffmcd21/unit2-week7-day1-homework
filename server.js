@@ -26,8 +26,16 @@ app.get("/greeting/:name", (req, res) => {
 })
 
 
+// --------------- ***** Tip Calculator ***** --------------- //
 
+// 2. Make a route of '/tip'
 
+app.get("/tip/:total/:tipPercentage", (req, res) => {
+    const total = req.params.total
+    const tipPercentage = req.params.tipPercentage
+    const tipTotal = total * (.01 * tipPercentage)
+    res.send(`${tipTotal}`)
+})
 
 
 
